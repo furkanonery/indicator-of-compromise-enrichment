@@ -28,13 +28,3 @@ def is_blacklisted(url):
         if "matches" in data and data["matches"]:
             return True
     return False
-
-# Add here a sample URL and your Google Safe Browsing API key for testing
-# url = "https://www.example.com"
-# api_key = GOOGLE_SAFE_BROWSING_API_KEY
-
-# is_blacklisted_result = is_blacklisted(url, api_key)
-# if is_blacklisted_result:
-#     print("The URL is on the blacklist!")
-# else:
-#     print("The URL is secure.")
