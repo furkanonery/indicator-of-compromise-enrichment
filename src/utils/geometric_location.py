@@ -1,5 +1,6 @@
 import socket
 from geopy.geocoders import Nominatim
+import json
 
 def get_geometric_location(url):
     # Resolving URL to IP address
@@ -10,16 +11,26 @@ def get_geometric_location(url):
     location = geolocator.geocode(ip_address, language="en")
 
     if location:
-        return {
+
+        data = {
             "url": url,
             "ip_address": ip_address,
             "latitude": location.latitude,
             "longitude": location.longitude,
             "address": location.address,
         }
+
+        json_data = json.dumps(data)
+
+        return json_data
     else:
-        return {
+        data = {
             "url": url,
             "ip_address": ip_address,
             "error": "Geometric location not found for this IP address.",
         }
+
+
+        json_data = json.dumps(data)
+
+        return json_data
