@@ -10,10 +10,10 @@ class Search(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     url = Column(String)
-    is_blacklisted = Column(Boolean, null=True)
-    is_ssl_enabled = Column(Boolean, null=True)
-    geometric_location = Column(JSON, null=True)
-    whois_info = Column(JSON, null=True)
+    is_blacklisted = Column(Boolean, nullable=True)
+    is_ssl_enabled = Column(Boolean, nullable=True)
+    geometric_location = Column(JSON, nullable=True)
+    whois_info = Column(JSON, nullable=True)
 
 
 Base.metadata.create_all(engine)
