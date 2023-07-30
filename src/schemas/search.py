@@ -1,15 +1,15 @@
-from pydantic import BaseModel
-from typing import Dict, Any
+from pydantic import BaseModel, Json
+from typing import Any
 
 class SearchBase(BaseModel):
     url: str
     is_blacklisted: bool
     is_ssl_enabled: bool
-    geometric_location: Dict[str, Any]
-    whois_info: Dict[str, Any]
+    geometric_location: Json[Any]
+    whois_info: Json[Any]
 
-class SearchCreate(SearchBase):
-    pass
+class SearchCreate(BaseModel):
+    url: str
 
 class Search(SearchBase):
     id: int
