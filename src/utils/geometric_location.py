@@ -1,13 +1,18 @@
 import socket
 from geopy.geocoders import Nominatim
 import json
+from urllib.parse import urlparse
+
+def get_domain(url):
+    parsed_url = urlparse(url)
+    return parsed_url.netloc
 
 def get_geometric_location(url):
     # Resolving URL to IP address
-    ip_address = socket.gethostbyname(url)
+    ip_address = socket.gethostbyname(get_domain(url))
 
     # Converting IP address to geolocation
-    geolocator = Nominatim(user_agent="geoapiExercises")
+    geolocator = Nominatim(user_agent="ioc")
     location = geolocator.geocode(ip_address, language="en")
 
     if location:
