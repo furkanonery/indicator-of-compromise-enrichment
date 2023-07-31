@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from src.routers.user import router as user_router
 from src.routers.search import router as search_router
-from src.database import Base, engine
+from src.database.database import Base, engine
 
 app = FastAPI()
 
