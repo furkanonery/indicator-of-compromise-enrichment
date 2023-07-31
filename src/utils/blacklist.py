@@ -1,5 +1,5 @@
 import requests
-from src.config import GOOGLE_SAFE_BROWSING_API_KEY
+from src.configs.config import GOOGLE_SAFE_BROWSING_API_KEY
 
 def is_blacklisted(url):
     safebrowsing_url = "https://safebrowsing.googleapis.com/v4/threatMatches:find"
